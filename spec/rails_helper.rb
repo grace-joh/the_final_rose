@@ -61,9 +61,17 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
   end
-end
+
+  # test_data
+  def test_data
+    @bach1 = Bachelorette.create(name: 'Hannah Brown', season_number: 15, season_description: 'The Most Dramatic Season Yet!')
+    @bach2 = Bachelorette.create(name: 'Angel Byun', season_number: 16, season_description: 'Like Heaven and Hell')
+    @pete = @bach1.contestants.create(name: 'Pilot Pete', age: 34, hometown: 'Irving, TX')
+    @scott = @bach2.contestants.create(name: 'Scott Someone', age: 30, hometown: 'Denver, CO')
+  end
 end
