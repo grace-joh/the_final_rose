@@ -7,6 +7,18 @@ RSpec.describe Contestant, type: :model do
     it { should have_many(:outings).through(:contestant_outings) }
   end
 
+  describe 'class methods' do
+    before(:each) do
+      test_data
+    end
+
+    describe 'average_age' do
+      it 'returns the average age of contestants' do
+        expect(Contestant.average_age).to eq(31.3)
+      end
+    end
+  end
+
   describe 'instance methods' do
     before(:each) do
       test_data

@@ -23,4 +23,10 @@ RSpec.describe 'the Bachelorette show page' do
       expect(page).to_not have_content(@scott.name)
     end
   end
+
+  describe 'User Story 5' do
+    it 'displays contestant avg age' do
+      expect(page).to have_content(@bach1.avg_contestant_age)
+    end
+  end
 end

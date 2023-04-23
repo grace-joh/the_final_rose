@@ -10,4 +10,8 @@ class Contestant < ApplicationRecord
   def season_description
     bachelorette.season_description
   end
+
+  def self.average_age
+    average(:age).round(1)
+  end
 end
