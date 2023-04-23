@@ -1,0 +1,10 @@
+<h1><%= @contestant.name %></h1>
+
+<h3>Season <%= @contestant.season_number %> - <%= @contestant.season_description %><h3>
+
+<h3>Outings</h3>
+<ul>
+  <% @contestant.outings.each do |outing| %>
+    <li><%= outing.name %></li>
+  <% end %>
+</ul>

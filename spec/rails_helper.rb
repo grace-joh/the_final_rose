@@ -71,8 +71,21 @@ RSpec.configure do |config|
   def test_data
     @bach1 = Bachelorette.create(name: 'Hannah Brown', season_number: 15, season_description: 'The Most Dramatic Season Yet!')
     @bach2 = Bachelorette.create(name: 'Angel Byun', season_number: 16, season_description: 'Like Heaven and Hell')
+
     @pete = @bach1.contestants.create(name: 'Pilot Pete', age: 34, hometown: 'Irving, TX')
     @brandon = @bach1.contestants.create(name: 'Brandon Brandon', age: 29, hometown: 'Los Angeles, CA')
+    @ben = @bach1.contestants.create(name: 'Ben Higgins', age: 32, hometown: 'Los Angeles, CA')
     @scott = @bach2.contestants.create(name: 'Scott Someone', age: 30, hometown: 'Denver, CO')
+
+    @outing1 = Outing.create!(name: 'Helicopter Ride', location: 'Bali', date: '2019-09-12')
+    @outing2 = Outing.create!(name: 'Kickball', location: 'Garden', date: '2019-09-11')
+    @outing3 = Outing.create!(name: 'Hot Springs', location: 'Kyoto', date: '2019-09-14')
+
+    @cont_out1 = ContestantOuting.create(contestant: @pete, outing: @outing2)
+    @cont_out2 = ContestantOuting.create(contestant: @brandon, outing: @outing2)
+    @cont_out3 = ContestantOuting.create(contestant: @ben, outing: @outing2)
+    @cont_out4 = ContestantOuting.create(contestant: @pete, outing: @outing1)
+    @cont_out5 = ContestantOuting.create(contestant: @ben, outing: @outing1)
+    @cont_out6 = ContestantOuting.create(contestant: @ben, outing: @outing3)
   end
 end
