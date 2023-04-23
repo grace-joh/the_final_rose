@@ -14,4 +14,14 @@ class Contestant < ApplicationRecord
   def self.average_age
     average(:age).round(1)
   end
+
+  def self.unique_hometown_list
+    pluck(:hometown).uniq
+  end
+
+  def self.unique_city_list
+    unique_hometown_list.map do |hometown|
+      hometown.split(', ').first
+    end
+  end
 end

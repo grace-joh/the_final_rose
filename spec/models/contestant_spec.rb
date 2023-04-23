@@ -17,6 +17,18 @@ RSpec.describe Contestant, type: :model do
         expect(Contestant.average_age).to eq(31.3)
       end
     end
+
+    describe 'unique_hometown_list' do
+      it 'returns the average age of contestants' do
+        expect(Contestant.unique_hometown_list).to eq(['Irving, TX', 'Los Angeles, CA', 'Denver, CO'])
+      end
+    end
+
+    describe 'unique_city_list' do
+      it 'returns the average age of contestants' do
+        expect(Contestant.unique_city_list).to eq(['Irving', 'Los Angeles', 'Denver'])
+      end
+    end
   end
 
   describe 'instance methods' do

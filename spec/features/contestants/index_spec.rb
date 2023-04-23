@@ -38,4 +38,13 @@ RSpec.describe 'the Bachelorette Contestants index page' do
       expect(page).to_not have_content(@pete.name)
     end
   end
+
+  describe 'User Story 6' do
+    it 'displays all contestants city list' do
+      visit bachelorette_contestants_path(@bach1)
+
+      expect(page).to have_content("These Contestants are from these hometowns: #{@bach1.contestant_city_list}")
+      save_and_open_page
+    end
+  end
 end
