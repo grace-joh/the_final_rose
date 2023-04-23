@@ -72,6 +72,7 @@ RSpec.configure do |config|
     @bach1 = Bachelorette.create(name: 'Hannah Brown', season_number: 15, season_description: 'The Most Dramatic Season Yet!')
     @bach2 = Bachelorette.create(name: 'Angel Byun', season_number: 16, season_description: 'Like Heaven and Hell')
     @pete = @bach1.contestants.create(name: 'Pilot Pete', age: 34, hometown: 'Irving, TX')
+    @brandon = @bach1.contestants.create(name: 'Brandon Brandon', age: 29, hometown: 'Los Angeles, CA')
     @scott = @bach2.contestants.create(name: 'Scott Someone', age: 30, hometown: 'Denver, CO')
   end
 end
